@@ -1,0 +1,105 @@
+<html>
+    <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="js/jquery-1.11.1.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="modal.css">
+</head>
+
+
+<style>
+    
+</style>
+
+<body>
+    
+<div class="container">
+        <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 
+           
+                <div class="col-sm-6 col-centered">
+                    <div class="default">
+                        
+                            <h1 class="modal-title">Send Message</h1>
+                      
+                        <div class="modal-body">
+                    <form action="" method="POST">
+                   
+                        <div class="form-group">
+                            <div class="input-group">
+                               <span class="input-group-addon"><i class="glyphicon  glyphicon-pencil blue"></i></span> 
+                                <input type="text" name="InputName" placeholder="Subject" class="form-control" autofocus="autofocus" required>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-phone blue"></i></span>
+                                <input type="number" name="InputCno" placeholder="Phone" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-comment blue"></i></span>
+                                <textarea  class="form-control input-sm "  id="message"  name="InputMessage" rows="7" placeholder="Type here..." class="form-control"  type="textarea" required></textarea><br><br><br>
+                                
+                                <!-- <textarea name="message" value="" id="message"></textarea>
+                                <p>
+                                    <span id="remaining">160 characters remaining</span>
+                                    <span id="messages">1 message(s)</span>
+                                </p> -->
+                               
+                            </div>
+                            <p>
+                                <span id="remaining">160 characters remaining</span>
+                                <span id="messages">1 message</span>
+                            </p>
+                            <!-- <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+                            <span><input type="text" id="count" class="t1"></span>
+                             -->
+                        </div>
+                        <div class="">
+                        <button type="submit" id="btnSubmit" class="btn btn-info pull-right">Send <span class="glyphicon glyphicon-send"></span></button>
+                            <button type="reset" value="Reset" name="reset" class="btn">Reset <span class="glyphicon glyphicon-refresh"></span></button>
+                        </div>
+                   
+                    </form>
+                        </div>
+                </div>
+            
+        </div> 
+        <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+             </div>
+            
+          </div>
+        </div>
+    </div>
+
+     <script>
+         $(document).ready(function(){
+            var $remaining = $('#remaining'),
+                $messages = $remaining.next();
+        
+            $('#message').keyup(function(){
+                var chars = this.value.length,
+                    messages = Math.ceil(chars / 160),
+                    remaining = messages * 160 - (chars % (messages * 160) || messages * 160);
+        
+                $remaining.text(remaining + ' characters remaining');
+                $messages.text(messages + ' message');
+            });
+        });
+    </script> 
+
+</body> 
+    </html>     
