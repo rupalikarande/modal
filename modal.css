@@ -51,3 +51,10 @@ button[type="reset"]    {
 .t1{
      width: 50px;
 }
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
